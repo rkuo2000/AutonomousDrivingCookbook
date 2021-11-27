@@ -4,7 +4,8 @@ import keras.backend as K
 import os
 import cv2
 
-class DriveDataGenerator(image.ImageDataGenerator):
+#class DriveDataGenerator(image.ImageDataGenerator):
+class DriveData
     def __init__(self,
                  featurewise_center=False,
                  samplewise_center=False,
