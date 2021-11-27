@@ -5,7 +5,7 @@ import os
 import cv2
 
 #class DriveDataGenerator(image.ImageDataGenerator):
-class DriveData
+class DriveData:
     def __init__(self,
                  featurewise_center=False,
                  samplewise_center=False,
