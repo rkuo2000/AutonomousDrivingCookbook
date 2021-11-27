@@ -15,6 +15,7 @@ class DriveDataGenerator(image.ImageDataGenerator):
                  rotation_range=0.,
                  width_shift_range=0.,
                  height_shift_range=0.,
+                 brightness_range=(1.,1.),
                  shear_range=0.,
                  zoom_range=0.,
                  channel_shift_range=0.,
@@ -24,8 +25,7 @@ class DriveDataGenerator(image.ImageDataGenerator):
                  vertical_flip=False,
                  rescale=None,
                  preprocessing_function=None,
-                 data_format=None,
-                 brightness_range=None):
+                 data_format=None):
         super(DriveDataGenerator, self).__init__(featurewise_center,
                  samplewise_center,
                  featurewise_std_normalization,
@@ -35,6 +35,7 @@ class DriveDataGenerator(image.ImageDataGenerator):
                  rotation_range,
                  width_shift_range,
                  height_shift_range,
+                 brightness_range,
                  shear_range,
                  zoom_range,
                  channel_shift_range,
@@ -44,8 +45,8 @@ class DriveDataGenerator(image.ImageDataGenerator):
                  vertical_flip,
                  rescale,
                  preprocessing_function,
-                 data_format,
-                 brightness_range)        
+                 data_format
+                 )        
         
     def flow(self, x_images, x_prev_states = None, y=None, batch_size=32, shuffle=True, seed=None,
              save_to_dir=None, save_prefix='', save_format='png', zero_drop_percentage=0.5, roi=None):
