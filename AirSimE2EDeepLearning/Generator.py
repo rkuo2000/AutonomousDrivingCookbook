@@ -45,7 +45,7 @@ class DriveDataGenerator(image.ImageDataGenerator):
                  rescale,
                  preprocessing_function,
                  data_format,
-                 )
+                 brightness_range)
 
     def flow(self, x_images, x_prev_states = None, y=None, batch_size=32, shuffle=True, seed=None,
              save_to_dir=None, save_prefix='', save_format='png', zero_drop_percentage=0.5, roi=None):
