@@ -25,7 +25,7 @@ class DriveDataGenerator(image.ImageDataGenerator):
                  rescale=None,
                  preprocessing_function=None,
                  data_format=None,
-                 brighten):
+                 brightness=None):
         super(DriveDataGenerator, self).__init__(featurewise_center,
                  samplewise_center,
                  featurewise_std_normalization,
@@ -44,7 +44,8 @@ class DriveDataGenerator(image.ImageDataGenerator):
                  vertical_flip,
                  rescale,
                  preprocessing_function,
-                 data_format)
+                 data_format,
+                 brightness_range)
 
     def flow(self, x_images, x_prev_states = None, y=None, batch_size=32, shuffle=True, seed=None,
              save_to_dir=None, save_prefix='', save_format='png', zero_drop_percentage=0.5, roi=None):
