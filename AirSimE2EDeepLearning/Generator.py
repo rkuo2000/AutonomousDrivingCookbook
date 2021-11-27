@@ -25,7 +25,7 @@ class DriveDataGenerator(image.ImageDataGenerator):
                  rescale=None,
                  preprocessing_function=None,
                  data_format=None,
-                 brightness=None):
+                 brightness_range=None):
         super(DriveDataGenerator, self).__init__(featurewise_center,
                  samplewise_center,
                  featurewise_std_normalization,
