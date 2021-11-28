@@ -197,6 +197,7 @@ class DriveIterator(image.Iterator):
         self.x_images = x_images
         
         self.zero_drop_percentage = zero_drop_percentage
+        print(self.zero_drop_percentage)
         self.roi = roi
         
         if self.x_images.ndim != 4:
@@ -245,6 +246,7 @@ class DriveIterator(image.Iterator):
 
     def __get_indexes(self, index_array):
         index_array = sorted(index_array)
+        print(self.zero_drop_percentage)        
         if self.x_prev_states is not None:
             batch_x_images = np.zeros(tuple([self.batch_size]+ list(self.x_images.shape)[1:]),
                                       dtype=K.floatx())
@@ -303,8 +305,6 @@ class DriveIterator(image.Iterator):
                     batch_y[i] *= -1
                     
                 if (np.isclose(batch_y[i], 0)):
-                    print(np.random.uniform(low=0, high=1))
-                    print(self.zero_drop_percentage)
                     if (np.random.uniform(low=0, high=1) > self.zero_drop_percentage):
                         idx.append(True)
                     else:
@@ -313,8 +313,6 @@ class DriveIterator(image.Iterator):
                     idx.append(True)
             else:
                 if (batch_y[i][int(len(batch_y[i])/2)] == 1):
-                    print(np.random.uniform(low=0, high=1))
-                    print(self.zero_drop_percentage)
                     if (np.random.uniform(low=0, high=1) > self.zero_drop_percentage):
                         idx.append(True)
                     else:
