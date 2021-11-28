@@ -1,6 +1,6 @@
 * modify Cooking.py --> substitute raise StopIteration to return
 * modify Generator.py --> embed brighten, add brightness_range to match keras.preprocessing.image.ImageDataGenerator
-* modify Generator.py --> change to x = image.image.flip_axis(x, img_col_axis)
+* modify Generator.py --> change image.flip_axis() to image.image.flip_axis()
 # Autonomous Driving using End-to-End Deep Learning: an AirSim tutorial
 
 ### Authors:
