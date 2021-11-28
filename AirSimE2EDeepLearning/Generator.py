@@ -245,7 +245,7 @@ class DriveIterator(image.Iterator):
 
     def __get_indexes(self, index_array):
         index_array = sorted(index_array)
-        print(self.zero_drop_percentage)        
+      
         if self.x_prev_states is not None:
             batch_x_images = np.zeros(tuple([self.batch_size]+ list(self.x_images.shape)[1:]),
                                       dtype=K.floatx())
