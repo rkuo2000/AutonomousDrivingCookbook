@@ -141,12 +141,12 @@ class DriveDataGenerator(image.ImageDataGenerator):
                                      img_channel_axis)
         if self.horizontal_flip:
             if np.random.random() < 0.5:
-                x = image.flip_axis(x, img_col_axis)
+                x = x = image.image.flip_axis(x, img_col_axis)
                 is_image_horizontally_flipped = True
 
         if self.vertical_flip:
             if np.random.random() < 0.5:
-                x = image.flip_axis(x, img_row_axis)
+                x = image.image.flip_axis(x, img_row_axis)
                 
         brighten_range = 0.4
         if brighten_range != 0:
