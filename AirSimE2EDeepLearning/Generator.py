@@ -303,6 +303,8 @@ class DriveIterator(image.Iterator):
                     batch_y[i] *= -1
                     
                 if (np.isclose(batch_y[i], 0)):
+                    print(np.random.uniform(low=0, high=1))
+                    print(self.zero_drop_percentage)
                     if (np.random.uniform(low=0, high=1) > self.zero_drop_percentage):
                         idx.append(True)
                     else:
@@ -311,6 +313,8 @@ class DriveIterator(image.Iterator):
                     idx.append(True)
             else:
                 if (batch_y[i][int(len(batch_y[i])/2)] == 1):
+                    print(np.random.uniform(low=0, high=1))
+                    print(self.zero_drop_percentage)
                     if (np.random.uniform(low=0, high=1) > self.zero_drop_percentage):
                         idx.append(True)
                     else:
