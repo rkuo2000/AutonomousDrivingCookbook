@@ -197,7 +197,6 @@ class DriveIterator(image.Iterator):
         self.x_images = x_images
         
         self.zero_drop_percentage = zero_drop_percentage
-        print(self.zero_drop_percentage)
         self.roi = roi
         
         if self.x_images.ndim != 4:
